@@ -3,21 +3,25 @@
 ![Netflix Logo](https://github.com/Blaxmiii/netflix_sql_project/blob/main/download.png)
 
 ##Overview
+
 This project focuses on analyzing Netflix Movies and TV Shows data using SQL. The dataset includes information about titles, genres, release years, ratings, countries, and durations. The goal of this project is to explore trends, extract insights, and practice SQL querying skills through real-world data analysis.
 
 ##Objectives
+
 -Analyze the distribution of content types(Movies and TV shows).
 -Identify the most common ratings for Movies and TV shows.
 -List and analyze content based on release years,countries and durations.
 -Explore and categorize content based on specific criteria and keywords.
 
 ##Dataset
+
 The data for this project is sourced from the kaggle dataset:
 -Dataset Name: Netflix Movies and TV Shows
 -Source: Kaggle
 -Link: https://www.kaggle.com/datasets/rahulvyasm/netflix-movies-and-tv-shows
 
 ##Schema
+
 BUSINESS problems and solution
 CREATE TABLE netflix(
   show_id VARCHAR(5),
