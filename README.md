@@ -44,12 +44,12 @@ SELECT
 FROM netflix;
 
 --15 Bussiness problems
---1.count the number of movies vs TV shows
+1.count the number of movies vs TV shows
 SELECT type,COUNT(*) AS total_type
 FROM netflix
 GROUP BY type;
 
---2.find the most common rating for MOVIES AND TV shows
+2.find the most common rating for MOVIES AND TV shows
 SELECT type,
       rating, 
 	  COUNT(*),
@@ -58,52 +58,52 @@ FROM netflix
 GROUP BY 1,2
 ORDER BY 3 DESC;
 
---3.List all movies realesed in a specific year (e.g 2020)
+3.List all movies realesed in a specific year (e.g 2020)
 SELECT type,release_year 
 FROM netflix
 WHERE release_year=2020;
 	
---4.find the top 5 countries with the most content on netflix
+4.find the top 5 countries with the most content on netflix
 SELECT country,COUNT(show_id)AS total_content
 FROM netflix
 GROUP BY 1
 ORDER BY COUNT(show_id)DESC
 LIMIT 5;
 
---5.identify the longest movie
+5.identify the longest movie
 SELECT * FROM netflix
 WHERE
     type = 'Movie'
     AND
     duration = (SELECT MAX(duration)FROM netflix)
 
---6.find content added in the last 5 years
+6.find content added in the last 5 years
 SELECT 
     *
     FROM netflix
 WHERE 
     TO_DATE(date_added,'month DD, YYYY') >= CURRENT_DATE -INTERVAL '5 years'
 
---7.find all movies and TV shows by director 'Rajiv Chilaka'
+7.find all movies and TV shows by director 'Rajiv Chilaka'
 SELECT * FROM netflix
 WHERE director = 'Rajiv Chilaka'	
 
---8.count the number of content items in each genre
+8.count the number of content items in each genre
 SELECT
     UNNEST(STRING_TO_ARRAY(listed_in,','))as genre,
 	COUNT(show_id)AS TOTAL_CONTENT
 FROM netflix
 GROUP BY 1;
 
---9.list all movies that are documentaries
+9.list all movies that are documentaries
 SELECT * FROM netflix
 WHERE listed_in LIKE '%Documentaries%';
 
---10.find all content without director
+10.find all content without director
 SELECT * FROM netflix
 WHERE director is NULL;
 
---11.find how many movies actor salman khan appeared in last 10 years
+11.find how many movies actor salman khan appeared in last 10 years
 SELECT * FROM netflix
 WHERE casts ILIKE '%Salman khan%'
     AND
