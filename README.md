@@ -44,24 +44,36 @@ SELECT
   DISTINCT type
 FROM netflix;
 
---15 Bussiness problems
+--11 Bussiness problems
+
 1.count the number of movies vs TV shows
+
 SELECT type,COUNT(*) AS total_type
+
 FROM netflix
+
 GROUP BY type;
 
 2.find the most common rating for MOVIES AND TV shows
+
 SELECT type,
+
       rating, 
 	  COUNT(*),
 	  MAX(rating)
+	  
 FROM netflix
+
 GROUP BY 1,2
+
 ORDER BY 3 DESC;
 
 3.List all movies realesed in a specific year (e.g 2020)
+
 SELECT type,release_year 
+
 FROM netflix
+
 WHERE release_year=2020;
 	
 4.find the top 5 countries with the most content on netflix
