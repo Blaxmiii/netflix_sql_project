@@ -34,6 +34,7 @@ CREATE TABLE netflix(
   description VARCHAR(1000)
   
 );
+
 SELECT * FROM netflix;
 
 SELECT COUNT(*) AS TOTAL_CONTENT
