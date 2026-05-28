@@ -77,14 +77,21 @@ FROM netflix
 WHERE release_year=2020;
 	
 4.find the top 5 countries with the most content on netflix
+
 SELECT country,COUNT(show_id)AS total_content
+
 FROM netflix
+
 GROUP BY 1
+
 ORDER BY COUNT(show_id)DESC
+
 LIMIT 5;
 
 5.identify the longest movie
+
 SELECT * FROM netflix
+
 WHERE
     type = 'Movie'
     AND
