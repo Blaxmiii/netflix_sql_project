@@ -93,52 +93,71 @@ LIMIT 5;
 SELECT * FROM netflix
 
 WHERE
+
     type = 'Movie'
     AND
     duration = (SELECT MAX(duration)FROM netflix)
 
 6.find content added in the last 5 years
-SELECT 
-    *
-    FROM netflix
+
+SELECT*FROM netflix
+
 WHERE 
+
     TO_DATE(date_added,'month DD, YYYY') >= CURRENT_DATE -INTERVAL '5 years'
 
 7.find all movies and TV shows by director 'Rajiv Chilaka'
+
 SELECT * FROM netflix
+
 WHERE director = 'Rajiv Chilaka'	
 
 8.count the number of content items in each genre
+
 SELECT
+
     UNNEST(STRING_TO_ARRAY(listed_in,','))as genre,
 	COUNT(show_id)AS TOTAL_CONTENT
+	
 FROM netflix
+
 GROUP BY 1;
 
 9.list all movies that are documentaries
+
 SELECT * FROM netflix
+
 WHERE listed_in LIKE '%Documentaries%';
 
 10.find all content without director
+
 SELECT * FROM netflix
+
 WHERE director is NULL;
 
 11.find how many movies actor salman khan appeared in last 10 years
 SELECT * FROM netflix
+
 WHERE casts ILIKE '%Salman khan%'
     AND
 	release_year > EXTRACT(YEAR FROM CURRENT_DATE) - 10;
 
 ##Conclusion
 -Analyzed Netflix Movies and TV Shows data using SQL.
+
 -Explored trends in genres, ratings, and content types.
+
 -Identified patterns in Netflix content across different countries and years.
+
 -Improved SQL skills including filtering, grouping, joins, and aggregations.
+
 -Gained practical experience working with a real-world dataset.
+
 -Extracted meaningful insights from entertainment data analysis.
 
 ##Connect with Me
 LinkedIn: https://www.linkedin.com/in/b-laxmi-6b18a1341/
+
 Instagram: https://www.instagram.com/blaxmiii_
 	
 
