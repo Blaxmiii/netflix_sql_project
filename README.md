@@ -9,32 +9,51 @@ This project focuses on analyzing Netflix Movies and TV Shows data using SQL. Th
 ##Objectives
 
 -Analyze the distribution of content types(Movies and TV shows).
+
 -Identify the most common ratings for Movies and TV shows.
+
 -List and analyze content based on release years,countries and durations.
+
 -Explore and categorize content based on specific criteria and keywords.
 
 ##Dataset
 
 The data for this project is sourced from the kaggle dataset:
+
 -Dataset Name: Netflix Movies and TV Shows
+
 -Source: Kaggle
+
 -Link: https://www.kaggle.com/datasets/rahulvyasm/netflix-movies-and-tv-shows
 
 ##Schema
 
 BUSINESS problems and solution
+
 CREATE TABLE netflix(
+
   show_id VARCHAR(5),
+  
   type VARCHAR(20),
+  
   title VARCHAR(250),
+  
   director VARCHAR(250),
+  
   casts VARCHAR(1000),
+  
   country VARCHAR(250),
+  
   date_added VARCHAR(50),
+  
   release_year INT,
+  
   rating VARCHAR(20),
+  
   duration VARCHAR(50),
+  
   listed_in VARCHAR(100),
+  
   description VARCHAR(1000)
   
 );
@@ -140,6 +159,7 @@ SELECT * FROM netflix
 WHERE director is NULL;
 
 11.find how many movies actor salman khan appeared in last 10 years
+
 SELECT * FROM netflix
 
 WHERE casts ILIKE '%Salman khan%'
@@ -147,6 +167,7 @@ WHERE casts ILIKE '%Salman khan%'
 	release_year > EXTRACT(YEAR FROM CURRENT_DATE) - 10;
 
 ##Conclusion
+
 -Analyzed Netflix Movies and TV Shows data using SQL.
 
 -Explored trends in genres, ratings, and content types.
@@ -160,6 +181,7 @@ WHERE casts ILIKE '%Salman khan%'
 -Extracted meaningful insights from entertainment data analysis.
 
 ##Connect with Me
+
 LinkedIn: https://www.linkedin.com/in/b-laxmi-6b18a1341/
 
 Instagram: https://www.instagram.com/blaxmiii_
